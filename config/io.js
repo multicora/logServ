@@ -3,7 +3,7 @@
 const { paths: { src, dist } } = require('./paths')
 
 const entry = {
-  main: ['babel-polyfill', src('main')],
+  index: ['babel-polyfill', src('index')],
   lib: ['babel-polyfill', src('lib')]
 }
 

@@ -1,3 +1,30 @@
+logServ
+=======
+
+Mare file with name `userConfig.js` with structure like
+
+```javascript
+export default {
+  db: {
+    dbName: '',
+    host: 'localhost',
+    user: '',
+    password: ''
+  },
+  server: {
+    port: 80
+  },
+  mailGun: {
+    apiKey: '',
+    domain: ''
+  }
+};
+```
+
+
+
+
+=================================
 babel-webpack-package-boilerplate
 =================================
 

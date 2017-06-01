@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=PROD webpack --progress --colors",
-    "build:watch": "cross-env NODE_ENV=DEV webpack --progress --colors --watch --growl",
+    "build:watch": "cross-env NODE_ENV=DEV webpack --progress --colors --watch",
     "test": "cross-env NODE_ENV=TEST mocha-webpack",
     "test:watch": "cross-env NODE_ENV=TEST mocha-webpack --watch --growl",
     "prestart": "npm run build",
@@ -79,5 +79,13 @@
       "PROD",
       "TEST"
     ]
+  },
+  "dependencies": {
+    "good": "^7.2.0",
+    "good-console": "^6.4.0",
+    "good-squeeze": "^5.0.2",
+    "hapi": "^16.3.0",
+    "merge": "^1.2.0",
+    "promise": "^7.1.1"
   }
 }
