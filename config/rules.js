@@ -6,6 +6,16 @@ const babel = {
   use: ['babel-loader']
 }
 
-const rules = [babel]
+const linter = {
+  test: /\.js$/,
+  exclude: [/node_modules/],
+  loader: "eslint-loader"
+}
 
-module.exports = { babel, rules }
+const rules = [babel, linter]
+
+module.exports = {
+  babel,
+  linter,
+  rules
+}

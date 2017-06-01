@@ -24,7 +24,8 @@ export default {
 
 
 
-=================================
+-----
+
 babel-webpack-package-boilerplate
 =================================
 

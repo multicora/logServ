@@ -1,18 +1,19 @@
 import Hapi from 'hapi';
 import Promise from 'promise';
 
-import config from './config';
+import globalConfig from './config';
 
-export default function server() {
-  const server = createServer(config);
+export default function() {
+  const server = createServer(globalConfig);
 
   startServer(server).catch((err) => {
-    console.log(err);
+    console.error(err); // eslint-disable-line no-console
   });
-};
+}
 
 function createServer(config) {
   const server = new Hapi.Server();
+
   server.connection({
     host: 'localhost',
     port: config.server.port
@@ -27,7 +28,7 @@ function startServer(server) {
       if (err) {
         reject(err);
       } else {
-        console.log(`Server running at: ${server.info.uri}`);
+        console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
         resolve();
       }
     });

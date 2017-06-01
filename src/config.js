@@ -23,14 +23,13 @@ const config = {
     domain: ''
   }
 };
-
 const fullConfig = merge.recursive(config, userConfig);
 
 checkConfig(fullConfig);
 
 export default merge.recursive(config, userConfig);
 
-function checkConfig(config) {
+function checkConfig(configObj) {
   const required = [
     'db.dbName',
     'mailGun.apiKey',
@@ -38,7 +37,7 @@ function checkConfig(config) {
   ];
 
   return required.forEach((keyChain) => {
-    if (!isValueExists(config, keyChain)) {
+    if (!isValueExists(configObj, keyChain)) {
       throw new Error(`Value "${keyChain}" should exists in config.`);
     }
   });
@@ -46,6 +45,7 @@ function checkConfig(config) {
 
 function isValueExists(obj, keyChain) {
   const keys = keyChain.split('.');
+
   return keys.reduce((prev, cur) => {
     return prev && prev[cur];
   }, obj);
